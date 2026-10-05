@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://bha4xr0fxm1c1"]
 
+[ext_resource type="Script" uid="uid://chv1j15gwptke" path="res://editor.gd" id="1_bj053"]
 [ext_resource type="FontFile" uid="uid://dbwvtec4vg07n" path="res://Fonts/SpaceMono-BoldItalic.ttf" id="1_x736c"]
 [ext_resource type="Texture2D" uid="uid://cvgbgugqjnke4" path="res://Textures/icons/file_open.png" id="2_e63od"]
 [ext_resource type="Texture2D" uid="uid://dwdf5yg2altvy" path="res://Textures/icons/file_save.png" id="3_a0k58"]
 [ext_resource type="Texture2D" uid="uid://dgrfs28thc3x8" path="res://Textures/icons/Play.png" id="4_e63od"]
 [ext_resource type="PackedScene" uid="uid://dqkupq1vc74ed" path="res://Assets/Timeline.tscn" id="5_a0k58"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_a0k58"]
 
 [node name="Control" type="Control" unique_id=964175382]
 layout_mode = 3
@@ -13,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_bj053")
 
 [node name="Panel" type="Panel" parent="." unique_id=1947718209]
 layout_mode = 1
@@ -112,8 +116,17 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
-[node name="Panel2" type="Panel" parent="Panel/VBoxContainer/VSplitContainer/Viewport/HSplitContainer" unique_id=1793874981]
+[node name="Viewport" type="Panel" parent="Panel/VBoxContainer/VSplitContainer/Viewport/HSplitContainer" unique_id=1793874981]
 layout_mode = 2
+
+[node name="Texture" type="TextureRect" parent="Panel/VBoxContainer/VSplitContainer/Viewport/HSplitContainer/Viewport" unique_id=485444272]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_a0k58")
 
 [node name="Control" parent="Panel/VBoxContainer/VSplitContainer" unique_id=1757789864 instance=ExtResource("5_a0k58")]
 custom_minimum_size = Vector2(0, 180)

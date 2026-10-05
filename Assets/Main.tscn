@@ -1,25 +1,22 @@
-[gd_scene format=3 uid="uid://csogmfctlx5va"]
+[gd_scene format=3 uid="uid://y5q3tfre16v5"]
 
-[ext_resource type="PackedScene" uid="uid://bbekoakf6c8bv" path="res://Assets/JiboPuppet.tscn" id="1_c4g8a"]
+[ext_resource type="PackedScene" uid="uid://csogmfctlx5va" path="res://Assets/Map.tscn" id="1_ut645"]
+[ext_resource type="Script" uid="uid://dyt7ysjjvcfmr" path="res://Assets/ViewportUpdater.gd" id="2_1gxou"]
+[ext_resource type="PackedScene" uid="uid://bha4xr0fxm1c1" path="res://Assets/Editor.tscn" id="2_l8r80"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_mik4o"]
+[node name="App" type="Node" unique_id=1098080616]
 
-[node name="Node3D" type="Node3D" unique_id=1233876075]
+[node name="Node3D" parent="." unique_id=1233876075 instance=ExtResource("1_ut645")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=890955011]
-mesh = SubResource("PlaneMesh_mik4o")
+[node name="SubViewport" type="SubViewport" parent="Node3D" unique_id=1689750501]
+size_2d_override_stretch = true
+script = ExtResource("2_1gxou")
 
-[node name="Node3D" parent="." unique_id=1966535732 instance=ExtResource("1_c4g8a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049391508, 0.03119798, 0.16551447)
-PelvisRot = 4.97
-TorsoRot = -17.305
-HeadRot = -5.365
+[node name="Camera3D" type="Camera3D" parent="Node3D/SubViewport" unique_id=1380572405]
+transform = Transform3D(-0.996701, 0, 0.08116074, 0.005818969, 0.99742645, 0.07146032, -0.08095187, 0.07169685, -0.9941359, 0, 0.28100586, -0.49267578)
+fov = 78.530525
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=503792871]
-transform = Transform3D(-0.99320537, 0.02149617, 0.114372104, 0.047352303, 0.9724049, 0.22844364, -0.10630531, 0.23230723, -0.96681565, 0, 0.332723, -0.44218063)
-fov = 47.88399
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1645823858]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=77179432]
-transform = Transform3D(1, 0, 0, 0, -0.7895073, 0.6137411, 0, -0.6137411, -0.7895073, 0, 0, 0)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1136659982]
+[node name="Control" parent="CanvasLayer" unique_id=964175382 node_paths=PackedStringArray("subViewport") instance=ExtResource("2_l8r80")]
+subViewport = NodePath("../../Node3D/SubViewport")

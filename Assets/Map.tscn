@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://csogmfctlx5va"]
+
+[ext_resource type="PackedScene" uid="uid://bbekoakf6c8bv" path="res://Assets/JiboPuppet.tscn" id="1_c4g8a"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mik4o"]
+
+[node name="Node3D" type="Node3D" unique_id=1233876075]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=890955011]
+mesh = SubResource("PlaneMesh_mik4o")
+
+[node name="Node3D" parent="." unique_id=1966535732 instance=ExtResource("1_c4g8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049391508, 0.03119798, 0.16551447)
+PelvisRot = 4.97
+TorsoRot = -17.305
+HeadRot = -5.365
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=77179432]
+transform = Transform3D(1, 0, 0, 0, -0.7895073, 0.6137411, 0, -0.6137411, -0.7895073, 0, 0, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1136659982]
