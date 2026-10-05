@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://du3p8wepjw27w"
+path="res://.godot/imported/torsoMeshMesh.obj-0df2d0a490a6f3582f8b9499e8d7eb72.mesh"
+
+[deps]
+
+files=["res://.godot/imported/torsoMeshMesh.obj-0df2d0a490a6f3582f8b9499e8d7eb72.mesh"]
+
+source_file="res://Jibo_Models-main/obj/torsoMeshMesh.obj"
+dest_files=["res://.godot/imported/torsoMeshMesh.obj-0df2d0a490a6f3582f8b9499e8d7eb72.mesh", "res://.godot/imported/torsoMeshMesh.obj-0df2d0a490a6f3582f8b9499e8d7eb72.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

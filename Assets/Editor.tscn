@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://bha4xr0fxm1c1"]
+
+[ext_resource type="FontFile" uid="uid://dbwvtec4vg07n" path="res://Fonts/SpaceMono-BoldItalic.ttf" id="1_x736c"]
+[ext_resource type="Texture2D" uid="uid://cvgbgugqjnke4" path="res://Textures/icons/file_open.png" id="2_e63od"]
+[ext_resource type="Texture2D" uid="uid://dwdf5yg2altvy" path="res://Textures/icons/file_save.png" id="3_a0k58"]
+[ext_resource type="Texture2D" uid="uid://dgrfs28thc3x8" path="res://Textures/icons/Play.png" id="4_e63od"]
+[ext_resource type="PackedScene" uid="uid://dqkupq1vc74ed" path="res://Assets/Timeline.tscn" id="5_a0k58"]
+
+[node name="Control" type="Control" unique_id=964175382]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=1947718209]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1482506118]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer" unique_id=1698493615]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/Panel" unique_id=1539532494]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Panel/HBoxContainer" unique_id=1955501793]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_x736c")
+theme_override_font_sizes/font_size = 26
+text = "Jibo Orchestra"
+
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/Panel/HBoxContainer" unique_id=321735432]
+layout_mode = 2
+
+[node name="Open" type="Button" parent="Panel/VBoxContainer/Panel/HBoxContainer" unique_id=1651700959]
+custom_maximum_size = Vector2(50, -1)
+layout_mode = 2
+icon = ExtResource("2_e63od")
+icon_alignment = 1
+
+[node name="Save" type="Button" parent="Panel/VBoxContainer/Panel/HBoxContainer" unique_id=983497064]
+custom_maximum_size = Vector2(50, -1)
+layout_mode = 2
+icon = ExtResource("3_a0k58")
+icon_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="Panel/VBoxContainer/Panel/HBoxContainer" unique_id=58546260]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="Panel/VBoxContainer/Panel/HBoxContainer" unique_id=907753190]
+custom_maximum_size = Vector2(50, -1)
+layout_mode = 2
+icon = ExtResource("4_e63od")
+icon_alignment = 1
+
+[node name="Button4" type="Button" parent="Panel/VBoxContainer/Panel/HBoxContainer" unique_id=1561112167]
+custom_maximum_size = Vector2(50, -1)
+layout_mode = 2
+icon_alignment = 1
+
+[node name="Button5" type="Button" parent="Panel/VBoxContainer/Panel/HBoxContainer" unique_id=1327529051]
+custom_maximum_size = Vector2(50, -1)
+layout_mode = 2
+icon_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/Panel/HBoxContainer" unique_id=450664961]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 0.37254903, 1, 0.32156864)
+theme_override_fonts/font = ExtResource("1_x736c")
+theme_override_font_sizes/font_size = 16
+text = "V1.0"
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Panel/VBoxContainer" unique_id=1939361814]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Viewport" type="Panel" parent="Panel/VBoxContainer/VSplitContainer" unique_id=1826731904]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Panel/VBoxContainer/VSplitContainer/Viewport" unique_id=1750494942]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/VSplitContainer/Viewport/HSplitContainer" unique_id=243928179]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="Panel/VBoxContainer/VSplitContainer/Viewport/HSplitContainer" unique_id=1793874981]
+layout_mode = 2
+
+[node name="Control" parent="Panel/VBoxContainer/VSplitContainer" unique_id=1757789864 instance=ExtResource("5_a0k58")]
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 2

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bbekoakf6c8bv"]
+
+[ext_resource type="Script" uid="uid://nge4frdgsn3m" path="res://Scripts/JiboPuppet.gd" id="1_2c3w8"]
+[ext_resource type="ArrayMesh" uid="uid://h57sc6gchhhs" path="res://Jibo_Models-main/obj/baseMeshMesh.obj" id="2_ru08i"]
+[ext_resource type="ArrayMesh" uid="uid://bsjvd67og2fmi" path="res://Jibo_Models-main/obj/pelvisMeshMesh.obj" id="3_hsyx3"]
+[ext_resource type="ArrayMesh" uid="uid://cp1qrpxlusrv0" path="res://Jibo_Models-main/obj/lightringMeshMesh.obj" id="4_ae4ma"]
+[ext_resource type="ArrayMesh" uid="uid://du3p8wepjw27w" path="res://Jibo_Models-main/obj/torsoMeshMesh.obj" id="5_33000"]
+[ext_resource type="ArrayMesh" uid="uid://cx0jcpdmecae1" path="res://Jibo_Models-main/obj/headMeshMesh.obj" id="6_hicxs"]
+[ext_resource type="ArrayMesh" uid="uid://8hfp6vecclup" path="res://Jibo_Models-main/obj/maskMeshMesh.obj" id="7_3hetp"]
+
+[node name="Node3D" type="Node3D" unique_id=1966535732]
+script = ExtResource("1_2c3w8")
+
+[node name="Base" type="MeshInstance3D" parent="." unique_id=420089228]
+mesh = ExtResource("2_ru08i")
+
+[node name="Pelvis" type="MeshInstance3D" parent="." unique_id=201377531]
+mesh = ExtResource("3_hsyx3")
+
+[node name="Light ring" type="MeshInstance3D" parent="Pelvis" unique_id=968404533]
+mesh = ExtResource("4_ae4ma")
+
+[node name="TorsoJoint" type="Node3D" parent="Pelvis" unique_id=1119531712]
+transform = Transform3D(1, 0, 0, 0, 0.9749892, 0.22225234, 0, -0.22225234, 0.9749892, 0, 0.047003582, -0.0053547025)
+
+[node name="Torso" type="MeshInstance3D" parent="Pelvis/TorsoJoint" unique_id=174779506]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+mesh = ExtResource("5_33000")
+
+[node name="Node3D" type="Node3D" parent="Pelvis/TorsoJoint/Torso" unique_id=2034080767]
+transform = Transform3D(1, 0, 0, 0, 0.9275545, -0.37368757, 0, 0.37368757, 0.9275545, 0, 0.08563358, 0.014895592)
+
+[node name="Head" type="MeshInstance3D" parent="Pelvis/TorsoJoint/Torso/Node3D" unique_id=1096132424]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+mesh = ExtResource("6_hicxs")
+
+[node name="ScreenCover" type="MeshInstance3D" parent="Pelvis/TorsoJoint/Torso/Node3D/Head" unique_id=194652640]
+mesh = ExtResource("7_3hetp")

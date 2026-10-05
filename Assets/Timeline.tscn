@@ -1,0 +1,191 @@
+[gd_scene format=3 uid="uid://dqkupq1vc74ed"]
+
+[ext_resource type="Texture2D" uid="uid://ibttf36hf7ge" path="res://Textures/icons/fast_rewind_40dp_E3E3E3_FILL0_wght500_GRAD0_opsz40.png" id="1_thdk6"]
+[ext_resource type="Texture2D" uid="uid://dgrfs28thc3x8" path="res://Textures/icons/Play.png" id="2_yurso"]
+[ext_resource type="Texture2D" uid="uid://x6byuapqub3j" path="res://Textures/icons/fast_forward_40dp_E3E3E3_FILL0_wght500_GRAD0_opsz40.png" id="3_qisxo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x347m"]
+bg_color = Color(1.02277845e-07, 0.13723418, 0.1947693, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r8sdb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_womkh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ehnmx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fnm3p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hi4kl"]
+
+[sub_resource type="Theme" id="Theme_3fnca"]
+HScrollBar/styles/grabber = SubResource("StyleBoxEmpty_r8sdb")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_womkh")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_ehnmx")
+HScrollBar/styles/scroll = SubResource("StyleBoxFlat_fnm3p")
+HScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_hi4kl")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6qa4y"]
+bg_color = Color(0.29102638, 0.6262314, 0.9010972, 0.48235294)
+
+[sub_resource type="Animation" id="Animation_oni7p"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_18r1s"]
+_data = {
+&"new_animation": SubResource("Animation_oni7p")
+}
+
+[node name="Control" type="Control" unique_id=1757789864]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -1086.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=574440446]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=407965467]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tools" type="Panel" parent="Panel/VBoxContainer" unique_id=553429854]
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/Tools" unique_id=1477267709]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Tools/HBoxContainer" unique_id=2129482428]
+layout_mode = 2
+text = "Timeline :)"
+
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/Tools/HBoxContainer" unique_id=1504110173]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/Tools/HBoxContainer" unique_id=995566360]
+layout_mode = 2
+text = "Choreography Duration"
+
+[node name="SpinBox" type="SpinBox" parent="Panel/VBoxContainer/Tools/HBoxContainer" unique_id=1653592122]
+layout_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="Panel/VBoxContainer/Tools/HBoxContainer" unique_id=780617636]
+layout_mode = 2
+
+[node name="GoToBegin" type="Button" parent="Panel/VBoxContainer/Tools/HBoxContainer" unique_id=23395707]
+custom_maximum_size = Vector2(30, -1)
+layout_mode = 2
+theme_override_constants/icon_max_width = 23
+icon = ExtResource("1_thdk6")
+
+[node name="Play" type="Button" parent="Panel/VBoxContainer/Tools/HBoxContainer" unique_id=741068560]
+custom_maximum_size = Vector2(30, -1)
+layout_mode = 2
+theme_override_constants/icon_max_width = 23
+icon = ExtResource("2_yurso")
+
+[node name="GoToEnd" type="Button" parent="Panel/VBoxContainer/Tools/HBoxContainer" unique_id=1897041256]
+custom_maximum_size = Vector2(30, -1)
+layout_mode = 2
+theme_override_constants/icon_max_width = 23
+icon = ExtResource("3_qisxo")
+
+[node name="VSeparator3" type="VSeparator" parent="Panel/VBoxContainer/Tools/HBoxContainer" unique_id=983612039]
+layout_mode = 2
+
+[node name="TimelineBox" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=714441285]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TimelineList" type="Panel" parent="Panel/VBoxContainer/TimelineBox" unique_id=415021372]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+
+[node name="List" type="VBoxContainer" parent="Panel/VBoxContainer/TimelineBox/TimelineList" unique_id=307188841]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Container" type="Container" parent="Panel/VBoxContainer/TimelineBox/TimelineList/List" unique_id=65519683]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer/TimelineBox/TimelineList/List" unique_id=171753237]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="List" type="VBoxContainer" parent="Panel/VBoxContainer/TimelineBox/TimelineList/List/ScrollContainer" unique_id=45661805]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Timeline" type="Panel" parent="Panel/VBoxContainer/TimelineBox" unique_id=2118914869]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_x347m")
+
+[node name="List" type="VBoxContainer" parent="Panel/VBoxContainer/TimelineBox/Timeline" unique_id=497364596]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="Panel/VBoxContainer/TimelineBox/Timeline/List" unique_id=91529359]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = SubResource("Theme_3fnca")
+follow_focus = true
+
+[node name="Ruler" type="Panel" parent="Panel/VBoxContainer/TimelineBox/Timeline/List/ScrollContainer2" unique_id=890528250]
+custom_minimum_size = Vector2(7000, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_6qa4y")
+
+[node name="ChoreoTime" type="Panel" parent="Panel/VBoxContainer/TimelineBox/Timeline/List/ScrollContainer2/Ruler" unique_id=77437]
+custom_minimum_size = Vector2(30, 40)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6qa4y")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer/TimelineBox/Timeline/List" unique_id=681932663]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="List" type="VBoxContainer" parent="Panel/VBoxContainer/TimelineBox/Timeline/List/ScrollContainer" unique_id=154048952]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1984159818]
+libraries/ = SubResource("AnimationLibrary_18r1s")
