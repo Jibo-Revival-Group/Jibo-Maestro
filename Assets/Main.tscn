@@ -9,12 +9,14 @@
 [node name="Node3D" parent="." unique_id=1233876075 instance=ExtResource("1_ut645")]
 
 [node name="SubViewport" type="SubViewport" parent="Node3D" unique_id=1689750501]
+size = Vector2i(1098, 512)
 size_2d_override_stretch = true
 script = ExtResource("2_1gxou")
 
 [node name="Camera3D" type="Camera3D" parent="Node3D/SubViewport" unique_id=1380572405]
 transform = Transform3D(-0.996701, 0, 0.08116074, 0.005818969, 0.99742645, 0.07146032, -0.08095187, 0.07169685, -0.9941359, 0, 0.28100586, -0.49267578)
-fov = 78.530525
+keep_aspect = 0
+fov = 126.5625
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1645823858]
 
