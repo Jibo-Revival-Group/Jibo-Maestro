@@ -7,6 +7,10 @@
 [ext_resource type="ArrayMesh" uid="uid://du3p8wepjw27w" path="res://Jibo_Models-main/obj/torsoMeshMesh.obj" id="5_33000"]
 [ext_resource type="ArrayMesh" uid="uid://cx0jcpdmecae1" path="res://Jibo_Models-main/obj/headMeshMesh.obj" id="6_hicxs"]
 [ext_resource type="ArrayMesh" uid="uid://8hfp6vecclup" path="res://Jibo_Models-main/obj/maskMeshMesh.obj" id="7_3hetp"]
+[ext_resource type="Texture2D" uid="uid://dx7dhjnhkw7o5" path="res://Textures/JiboFace.png" id="8_ru08i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8r80"]
+albedo_color = Color(0.17558122, 0.7463335, 0, 1)
 
 [node name="Node3D" type="Node3D" unique_id=1966535732]
 script = ExtResource("1_2c3w8")
@@ -19,6 +23,7 @@ mesh = ExtResource("3_hsyx3")
 
 [node name="Light ring" type="MeshInstance3D" parent="Pelvis" unique_id=968404533]
 mesh = ExtResource("4_ae4ma")
+surface_material_override/0 = SubResource("StandardMaterial3D_l8r80")
 
 [node name="TorsoJoint" type="Node3D" parent="Pelvis" unique_id=1119531712]
 transform = Transform3D(1, 0, 0, 0, 0.9749892, 0.22225234, 0, -0.22225234, 0.9749892, 0, 0.047003582, -0.0053547025)
@@ -36,3 +41,8 @@ mesh = ExtResource("6_hicxs")
 
 [node name="ScreenCover" type="MeshInstance3D" parent="Pelvis/TorsoJoint/Torso/Node3D/Head" unique_id=194652640]
 mesh = ExtResource("7_3hetp")
+
+[node name="Sprite3D" type="Sprite3D" parent="Pelvis/TorsoJoint/Torso/Node3D/Head/ScreenCover" unique_id=1311963089]
+transform = Transform3D(0.565, 0, 0, 0, 0.53761905, -0.17375527, 0, 0.17375527, 0.53761905, 0, 0.09778623, -0.039490685)
+pixel_size = 0.0002
+texture = ExtResource("8_ru08i")
