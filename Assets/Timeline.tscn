@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://x6byuapqub3j" path="res://Textures/icons/fast_forward_40dp_E3E3E3_FILL0_wght500_GRAD0_opsz40.png" id="3_qisxo"]
 [ext_resource type="Script" uid="uid://453fr8nyjvgs" path="res://Scripts/ruler.gd" id="4_qisxo"]
 [ext_resource type="PackedScene" uid="uid://unyr6cbeadyk" path="res://Assets/PlayHead.tscn" id="4_yurso"]
+[ext_resource type="Script" uid="uid://c8umvvenashdb" path="res://Scripts/time_manager.gd" id="5_time_manager"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x347m"]
 bg_color = Color(1.02277845e-07, 0.13723418, 0.1947693, 1)
@@ -162,6 +163,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("5_time_manager")
 
 [node name="RulerScroll" type="ScrollContainer" parent="Panel/VBoxContainer/TimelineBox/Timeline/List" unique_id=91529359]
 custom_minimum_size = Vector2(0, 40)
@@ -184,19 +186,15 @@ anchor_bottom = 1.0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6qa4y")
 
-[node name="Control" parent="Panel/VBoxContainer/TimelineBox/Timeline/List/RulerScroll/Ruler/ChoreoTime" unique_id=400778800 instance=ExtResource("4_yurso")]
+[node name="PlayHead" parent="Panel/VBoxContainer/TimelineBox/Timeline/List/RulerScroll/Ruler/ChoreoTime" unique_id=400778800 instance=ExtResource("4_yurso")]
 layout_mode = 1
 anchors_preset = 9
 anchor_left = 0.0
 anchor_right = 0.0
 grow_horizontal = 1
-ShowHead = true
+show_head = true
 
 [node name="Timeline" type="ScrollContainer" parent="Panel/VBoxContainer/TimelineBox/Timeline/List" unique_id=681932663]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Control" parent="Panel/VBoxContainer/TimelineBox/Timeline/List/Timeline" unique_id=914635847 instance=ExtResource("4_yurso")]
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -210,6 +208,15 @@ layout_mode = 0
 offset_right = 2306.0
 offset_bottom = 276.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PlayHead" parent="Panel/VBoxContainer/TimelineBox/Timeline/List/Timeline/bg" unique_id=914635847 instance=ExtResource("4_yurso")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_bottom = 276.0
 size_flags_vertical = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1984159818]
