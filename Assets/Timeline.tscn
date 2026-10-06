@@ -163,29 +163,28 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ScrollContainer2" type="ScrollContainer" parent="Panel/VBoxContainer/TimelineBox/Timeline/List" unique_id=91529359]
+[node name="RulerScroll" type="ScrollContainer" parent="Panel/VBoxContainer/TimelineBox/Timeline/List" unique_id=91529359]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme = SubResource("Theme_3fnca")
 follow_focus = true
 
-[node name="Ruler" type="Panel" parent="Panel/VBoxContainer/TimelineBox/Timeline/List/ScrollContainer2" unique_id=890528250]
+[node name="Ruler" type="Panel" parent="Panel/VBoxContainer/TimelineBox/Timeline/List/RulerScroll" unique_id=890528250]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_6qa4y")
 script = ExtResource("4_qisxo")
 
-[node name="ChoreoTime" type="Panel" parent="Panel/VBoxContainer/TimelineBox/Timeline/List/ScrollContainer2/Ruler" unique_id=77437]
+[node name="ChoreoTime" type="Panel" parent="Panel/VBoxContainer/TimelineBox/Timeline/List/RulerScroll/Ruler" unique_id=77437]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 377.0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6qa4y")
 
-[node name="Control" parent="Panel/VBoxContainer/TimelineBox/Timeline/List/ScrollContainer2/Ruler/ChoreoTime" unique_id=400778800 instance=ExtResource("4_yurso")]
+[node name="Control" parent="Panel/VBoxContainer/TimelineBox/Timeline/List/RulerScroll/Ruler/ChoreoTime" unique_id=400778800 instance=ExtResource("4_yurso")]
 layout_mode = 1
 anchors_preset = 9
 anchor_left = 0.0
@@ -193,20 +192,27 @@ anchor_right = 0.0
 grow_horizontal = 1
 ShowHead = true
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer/TimelineBox/Timeline/List" unique_id=681932663]
+[node name="Timeline" type="ScrollContainer" parent="Panel/VBoxContainer/TimelineBox/Timeline/List" unique_id=681932663]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="List" type="VBoxContainer" parent="Panel/VBoxContainer/TimelineBox/Timeline/List/ScrollContainer" unique_id=154048952]
+[node name="Control" parent="Panel/VBoxContainer/TimelineBox/Timeline/List/Timeline" unique_id=914635847 instance=ExtResource("4_yurso")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="bg" type="Panel" parent="Panel/VBoxContainer/TimelineBox/Timeline/List/Timeline" unique_id=971071357]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Control" parent="Panel/VBoxContainer/TimelineBox/Timeline/List/ScrollContainer" unique_id=914635847 instance=ExtResource("4_yurso")]
-layout_mode = 2
+[node name="List" type="VBoxContainer" parent="Panel/VBoxContainer/TimelineBox/Timeline/List/Timeline/bg" unique_id=154048952]
+layout_mode = 0
+offset_right = 2306.0
+offset_bottom = 276.0
+size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1984159818]
 libraries/ = SubResource("AnimationLibrary_18r1s")
 
-[connection signal="value_changed" from="Panel/VBoxContainer/Tools/HBoxContainer/ChoreoDuration" to="Panel/VBoxContainer/TimelineBox/Timeline/List/ScrollContainer2/Ruler" method="_on_choreo_duration_value_changed"]
+[connection signal="value_changed" from="Panel/VBoxContainer/Tools/HBoxContainer/ChoreoDuration" to="Panel/VBoxContainer/TimelineBox/Timeline/List/RulerScroll/Ruler" method="_on_choreo_duration_value_changed"]
