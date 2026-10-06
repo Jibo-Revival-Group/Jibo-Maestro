@@ -1,36 +1,46 @@
 [gd_scene format=3 uid="uid://unyr6cbeadyk"]
 
+[ext_resource type="Script" uid="uid://dsp02l5urd8wh" path="res://Scripts/play_head.gd" id="1_q5cio"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5cio"]
+bg_color = Color(1, 1, 1, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x347m"]
 bg_color = Color(0.7485991, 0.41876805, 0.9853259, 1)
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+corner_detail = 1
 
 [node name="Control" type="Control" unique_id=400778800]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_q5cio")
 
 [node name="Line" type="Panel" parent="." unique_id=420715280]
-custom_minimum_size = Vector2(5, 20)
+custom_minimum_size = Vector2(2, 20)
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -2.5
-offset_right = 2.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q5cio")
 
 [node name="Head" type="Panel" parent="." unique_id=991319234]
+visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
+offset_left = -10.0
+offset_right = 10.0
+offset_bottom = 20.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x347m")

@@ -40,6 +40,7 @@ transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 mesh = ExtResource("6_hicxs")
 
 [node name="ScreenCover" type="MeshInstance3D" parent="Pelvis/TorsoJoint/Torso/Node3D/Head" unique_id=194652640]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 1.4901161e-08, 0, -1.4901161e-08, 1.0000001, 0, 0, 0)
 mesh = ExtResource("7_3hetp")
 
 [node name="Sprite3D" type="Sprite3D" parent="Pelvis/TorsoJoint/Torso/Node3D/Head/ScreenCover" unique_id=1311963089]
