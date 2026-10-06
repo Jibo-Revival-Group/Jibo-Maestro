@@ -23,8 +23,8 @@ func updateJiboBody():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if DEMO:
-		PelvisRot += .01
-		TorsoRot += .02
+		PelvisRot += .2
+		TorsoRot += .2
 		HeadRot += .05
 		updateJiboBody()
 	pass

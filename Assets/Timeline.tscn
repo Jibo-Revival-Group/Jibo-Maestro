@@ -43,7 +43,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -1086.0
+offset_bottom = -535.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -211,12 +211,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="PlayHead" parent="Panel/VBoxContainer/TimelineBox/Timeline/List/Timeline/bg" unique_id=914635847 instance=ExtResource("4_yurso")]
-layout_mode = 0
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 9
 anchor_left = 0.0
 anchor_right = 0.0
-anchor_bottom = 0.0
-offset_bottom = 276.0
+grow_horizontal = 1
 size_flags_vertical = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1984159818]
